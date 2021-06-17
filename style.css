@@ -75,7 +75,7 @@ div.navZineMaker{
   font-style: italic;
 }
 
-main{
+div.homepage{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -124,26 +124,18 @@ div.flex1{
   flex-direction: row;
   width: 100%;
   height: 50vh;
-  /* background-color: red; */
 }
-
 div.flex1_2_1{
-  display: flex;
   width: 40%;
   height: 100%;
-  /* border: 4px solid black;
-  object-fit: cover; */
   margin-right: 16px;
 }
-img{
-  /* width: 100%; */
-}
+
 div.flex1_2_2{
   display: flex;
   flex-direction: column;
   width: 60%;
   justify-content: space-between;
-
 }
 div.flex1_3_1{
   display: flex;
@@ -151,54 +143,84 @@ div.flex1_3_1{
   justify-content: space-between;
 }
 div.flex1_3_2{
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin-top: 16px;
   height: 20vh;
-  border: 4px solid black;
   border-radius: 20vh;
-  font-size: 40px;
-  /* color: #925BEC; */
-  font-style: italic;
 }
 div.flex1_4_1{
   height: 30vh;
   width: 88%;
 }
 div.flex1_4_2{
-  display: flex;
-  border: 4px solid black;
   border-radius: 8vh;
-  font-size: 40px;
+  margin-left: 16px;
+}
+
+
+
+div.flex2{
+  display: flex;
+  flex-direction: row;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  height: 60vh;
+}
+div.flex2_2_1{
+  display: flex;
+  flex-direction: column;
+  width: 64%;
+}
+div.flex2_3_2{
+  margin-top: 16px;
+}
+div.flex2_3_2 img{
+  width: 100%;
+}
+div.flex2_2_2{
+  width: 46%;
+  margin-left: 16px;
+  border-radius: 20vh;
+}
+
+
+div{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
+
+div.mosBoxTxt{
+  display: flex;
   justify-content: center;
   align-items: center;
-  margin-left: 16px;
   padding: 16px;
-
-  font-family: "Space Grotesk";
-  font-weight: 500;
-  color: #925BEC;
-}
-div.mosBoxImg{
-  border: 4px solid black;
-  object-fit: scale-down;
-  overflow: hidden;
-}
-div.mosBoxImg img{
-  /* height: 100%; */
-  /* width: 100%; */
+  border: 4px solid #925BEC;
+  font-size: 40px;
 }
 div.mosBoxTxt:hover{
   background-color: #925BEC;
   border-color: #925BEC;
   color: #D6D6D6;
+  cursor: pointer;
 }
-div.mosBoxTxt{
-  border-color: #925BEC;
+
+div.Sp{
+  font-family: "Space Grotesk";
+  color: #925BEC;
+  font-weight: 500;
 }
-div{
-  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-  box-sizing: border-box;
+div.TD{
+  font-family: "Times Dot";
+  color: black;
+  font-style: italic;
+}
+
+div.mosBoxImg{
+  display: flex;
+  border: 4px solid black;
+  object-fit: scale-down;
+  overflow: hidden;
+}
+div.mosBoxImg img:hover{
+  filter: blur(3px);
 }
