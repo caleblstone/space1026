@@ -183,6 +183,40 @@ div.flex2_2_2{
 }
 
 
+div.flex3{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+div.flex3_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 72vh;
+  width: 40%;
+  margin-right: 16px;
+}
+div.flex3_1_1{
+  margin-bottom: 16px;
+  border-radius: 8vh;
+}
+div.flex3_2{
+  width: 36%;
+  margin-right: 16px;
+}
+div.flex3_3{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24%;
+}
+div.flex3_3_1{
+  height: 100%;
+  margin-bottom: 16px;
+}
+
+
 div{
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
   -moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -221,6 +255,12 @@ div.mosBoxImg{
   object-fit: scale-down;
   overflow: hidden;
 }
-div.mosBoxImg img:hover{
-  filter: blur(3px);
+div.mosBoxImg:hover{
+  -webkit-box-shadow: 0 0 24px #925BEC;
+  -moz-box-shadow: 0 0 24px #925BEC;
+  box-shadow: 0 0 24px #925BEC;
+  cursor: pointer;
+}
+img{
+  width: 100%;
 }
