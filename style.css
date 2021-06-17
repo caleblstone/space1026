@@ -1,0 +1,204 @@
+@font-face {
+  font-family: "Times Dot";
+  src: url(Times_Dot/timesdotrom-webfont.woff2);
+}
+@font-face {
+  font-family: "Times Dot";
+  src: url(Times_Dot/timesdotbol-webfont.woff2);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Times Dot";
+  src: url(Times_Dot/times_dot-italic-webfont.woff);
+  font-style: italic;
+}
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400&display=swap');
+
+
+
+
+body{
+  font-family: Times Dot;
+  margin: 0px;
+  background-color: #D6D6D6;
+
+}
+header{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;
+  border: 4px solid black;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 88px;
+}
+h1{
+  font-family: "Space Grotesk";
+  font-size: 64px;
+  line-height: 0;
+  font-weight: normal;
+}
+h3{
+  font-size: 32px;
+  font-weight: 400;
+}
+div.navigation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+}
+nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Grotesk";
+  border: 2px solid #925BEC;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #925BEC;
+  height: 50px;
+  border-radius: 50px;
+}
+nav:hover{
+  background-color: #925BEC;
+  color: #D6D6D6;
+  cursor: pointer;
+}
+
+div.navZineMaker{
+  font-family: "Times Dot";
+  font-style: italic;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+div.abtBar{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;
+  border: 4px solid black;
+  border-top: none;
+  border-right: none;
+  width: 25%;
+  height: calc(100vh - 88px);
+  padding-left: 24px;
+  padding-right: 16px;
+  padding-top: 16px;
+  overflow-y: scroll;
+
+  font-size: 24px;
+  line-height: 1.2;
+
+}
+div.mosaic{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+-moz-box-sizing: border-box;    /* Firefox, other Gecko */
+box-sizing: border-box;
+  padding-left: 16px;
+  padding-right: 16px;
+  padding-top: 16px;
+  border: 4px solid black;
+  border-top: none;
+  width: 75%;
+  height: calc(100vh - 88px);
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+
+div.flex1{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 50vh;
+  /* background-color: red; */
+}
+
+div.flex1_2_1{
+  display: flex;
+  width: 40%;
+  height: 100%;
+  /* border: 4px solid black;
+  object-fit: cover; */
+  margin-right: 16px;
+}
+img{
+  /* width: 100%; */
+}
+div.flex1_2_2{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  justify-content: space-between;
+
+}
+div.flex1_3_1{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+div.flex1_3_2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 16px;
+  height: 20vh;
+  border: 4px solid black;
+  border-radius: 20vh;
+  font-size: 40px;
+  /* color: #925BEC; */
+  font-style: italic;
+}
+div.flex1_4_1{
+  height: 30vh;
+  width: 88%;
+}
+div.flex1_4_2{
+  display: flex;
+  border: 4px solid black;
+  border-radius: 8vh;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 16px;
+  padding: 16px;
+
+  font-family: "Space Grotesk";
+  font-weight: 500;
+  color: #925BEC;
+}
+div.mosBoxImg{
+  border: 4px solid black;
+  object-fit: scale-down;
+  overflow: hidden;
+}
+div.mosBoxImg img{
+  /* height: 100%; */
+  /* width: 100%; */
+}
+div.mosBoxTxt:hover{
+  background-color: #925BEC;
+  border-color: #925BEC;
+  color: #D6D6D6;
+}
+div.mosBoxTxt{
+  border-color: #925BEC;
+}
+div{
+  -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+  -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+  box-sizing: border-box;
+}
