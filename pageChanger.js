@@ -4,7 +4,8 @@ let homePage = document.querySelector("div.homepage")
 let zinePage = document.querySelector("div.zineMaker")
 let pages = document.querySelectorAll("div.page")
 
-let zinePreview = document.querySelector("div.📖-root")
+
+
 
 
 homeButton.addEventListener("click", function(){
@@ -41,16 +42,6 @@ buttons.forEach((item, i) => {
     if (item.hasChildNodes("div.navZineMaker") == true) {
       homePage.style.display = "none"
       zinePage.style.display = "flex"
-      zinePreview.style.display = "block"
     }
   })
 });
-
-
-document.addEventListener("scroll", function(){
-  if (zinePage.classList.contains("selected") == false) {
-    zinePreview.style.display = "none"
-  }
-
-})
-  console.log(homePage.style.display);
