@@ -26,8 +26,8 @@ zineButton.addEventListener("click", function(){
   Bindery.makeBook({
     content: '#content',
     pageSetup: {
-    size: { width: '4in', height: '6in' },
-    margin: { top: '40pt', inner: '12pt', outer: '16pt', bottom: '20pt' },
+    size: { width: '5in', height: '8in' },
+    margin: { top: '48pt', inner: '24pt', outer: '36pt', bottom: '20pt' },
     },
     rules:[
       titleBreak, questionBreak, qFinishedBreak, textSplit, runningHeader
@@ -83,7 +83,7 @@ let formatter = function(){
 
 //Randomize the order of the questions
 
-  let quesArray = answers.question
+  let quesArray = answers.questions
   let quesArrayLength = quesArray.length
 
   function shuffle(array){
@@ -151,11 +151,8 @@ let formatter = function(){
     questionDiv.appendChild(questionText)
     contentBox.appendChild(questionDiv)
 
-    let answerText1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut semper enim. Mauris eu venenatis massa. Mauris rhoncus faucibus tortor vitae porttitor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis scelerisque dolor et turpis consequat vehicula. Donec id risus eu libero bibendum ornare. Proin id libero augue. Sed in aliquet enim, et gravida libero. Integer eros libero, molestie at efficitur quis, congue ac ex. Integer tempor vel tellus sed auctor. Cras sed bibendum neque. Nulla facilisi. Quisque pretium non orci sit amet rutrum. Curabitur id nisi sed dolor porttitor dignissim. Nulla libero leo, placerat quis faucibus eget, tincidunt volutpat dui Pellentesque a lectus ac tellus venenatis bibendum ut ac erat. Nullam in tincidunt ligula. Aliquam iaculis turpis felis, eget suscipit nunc vestibulum ut. Curabitur ac mattis est. Curabitur pulvinar, enim ut lobortis auctor, tellus massa suscipit orci, sed suscipit magna augue id magna. Pellentesque semper mauris nec ultricies rhoncus. Quisque porta posuere viverra. Donec sit amet gravida tortor."
-
-    let answerText2 = "Duis volutpat, odio et porta molestie, eros augue sodales ante, eu facilisis nisi felis vitae tortor. In venenatis convallis elit ut lobortis. Duis nibh nibh, pellentesque porta aliquet sit amet, interdum quis libero. Donec blandit lorem quis turpis consequat porttitor. Fusce consequat purus ut mauris fermentum pretium. Sed laoreet accumsan scelerisque. Cras vel mollis leo, eget tempor odio. Mauris lorem nisi, mollis sit amet egestas ac, porttitor quis orci. Maecenas vitae nisi et dolor hendrerit pulvinar. Ut luctus dictum tincidunt. Curabitur nisi risus, tempor in metus eget, viverra lobortis massa. Aliquam ultricies cursus sapien, placerat dapibus urna blandit ac. Suspendisse potenti. Suspendisse aliquet nisl arcu, in accumsan dui sagittis a. Integer fringilla lacinia justo et placerat. Vivamus mollis mi a turpis luctus sollicitudin. Curabitur eu pellentesque erat. Nullam nec lorem sem. Cras iaculis, nisl placerat accumsan ullamcorper, urna lacus fermentum magna, pretium dapibus nisl est quis mauris."
-
-    let answerText3 = "Proin vitae orci sit amet purus efficitur auctor. Fusce venenatis justo vitae diam dignissim, quis vulputate urna ultrices. Nullam tempus, augue tempor commodo mollis, odio nisl pulvinar ante, et elementum orci erat non magna. Aliquam mi urna, sodales posuere magna nec, feugiat imperdiet tortor. Pellentesque eu tortor eget ante sodales ultrices et eget velit. Maecenas sem nunc, tincidunt cursus iaculis quis, elementum nec ante. Integer sit amet blandit dui, ultricies pellentesque diam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc eget dolor nec eros rhoncus interdum nec eu augue. Aenean efficitur, elit blandit ultrices interdum, libero nisl egestas felis, quis imperdiet tortor lorem non massa. Phasellus sed metus a lectus dignissim ullamcorper. Donec eu dui ultricies elit imperdiet finibus non eu sapien. Suspendisse sed convallis elit. Ut sem nisl, vehicula id venenatis vitae, cursus nec mauris. Phasellus non nisi dictum eros venenatis dictum in at lacus. Aliquam eget ex fringilla, suscipit est et, condimentum dolor. Morbi fermentum lacus metus, sed venenatis elit mollis sed. "
+    let answerText1 = quesArray[0]
+    console.log(quesArray[0]);
 
     let answerNode = document.createTextNode(answerText1)
     let answerComp = document.createElement("p")
@@ -185,13 +182,21 @@ let bookSetup = function(){
   homeButton.addEventListener("click", function(){
     zinePreview.remove()
     contentBox.innerHTML = ""
-    let binderyBox = document.querySelector("div.📖-measure-area")
-    binderyBox.remove()
+    // let binderyBox = document.querySelector("div.📖-measure-area")
+    let binderyBox = document.querySelector("div.zineProper")
+    // binderyBox.remove()
+    function removeAllChildNodes(parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+  }
+
+  removeAllChildNodes(binderyBox);
   })
 }
 
 
-//Binery Rules
+//Bindery Rules
 
 let titleBreak = Bindery.PageBreak({
   selector: 'img.titleBreak',
@@ -217,6 +222,8 @@ let runningHeader = Bindery.RunningHeader({
     ? `${pageInfo.number}`
     : `${pageInfo.number}`
 })
+
+
 
 
 //FUNctions

@@ -364,10 +364,23 @@ div.📖-running-header{
   font-size: 40px;
   color: #925BEC;
 }
+p{
+  font-size: 20px;
+
+}
 
 #content{
   display: none;
 }
 div.zineFrame #content{
   display: block;
+}
+
+#randomize{
+  text-decoration: underline;
+  color: #925BEC
+}
+#randomize:hover{
+  cursor: pointer;
+  
 }
