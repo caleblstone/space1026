@@ -56,6 +56,11 @@ h3{
   font-size: 32px;
   font-weight: 400;
 }
+h4{
+  font-family: "Space Grotesk";
+  font-size: 24px;
+  font-weight: 500;
+}
 div.navigation{
   display: flex;
   flex-direction: row;
@@ -90,6 +95,7 @@ div.homepage{
   flex-direction: row;
   justify-content: space-around;
   width: 100%;
+
 }
 
 div.abtBar{
@@ -284,7 +290,7 @@ div.zineMaker{
 div.parameters{
   display: flex;
   flex-direction: column;
-  width: 24%;
+  width: 16%;
   height: calc(100vh - 88px);
   border: 4px solid black;
   border-top: none;
@@ -316,9 +322,46 @@ div.paramBox{
   border: 4px solid black;
   padding: 16px;
   padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+div.paramBox div{
+  font-family: "Space Grotesk";
+  margin-top: 16px;
+}
+div.paramBox div input{
+  width: 100%;
+  margin-top: 8px;
+  border: none;
+}
+div.paramBox div input[type="checkbox"]{
+  width: auto
+}
+div.paramButton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Space Grotesk";
+  border: 2px solid #925BEC;
+  padding-left: 16px;
+  padding-right: 16px;
+  color: #925BEC;
+  height: 50px;
+  border-radius: 50px;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+div.paramButton:hover{
+  background-color: #925BEC;
+  color: #D6D6D6;
+  cursor: pointer;
+}
+div.applyButton{
+  margin: none;
 }
 div.zineFrame{
-  width: 76%;
+  width: 84%;
   padding: 16px;
   padding-bottom: none;
   display: flex;
@@ -342,14 +385,27 @@ box-sizing: border-box;
 
 /* this is where we work on the bindery frame */
 h1.bookTitle{
-  color: #925BEC;
+  color: white;
   text-decoration: underline;
+  text-align: center;
+  font-size: 112px;
+  font-weight: 100;
 }
 h2{
   font-family: "Space Grotesk";
-  font-size: 40px;
-  margin-left: 24px;
-
+  font-size: 48px;
+  line-height: 1.2;
+  /* margin-left: 24px; */
+  color: #925BEC;
+  font-weight: 400;
+}
+h5{
+  font-family: "Times Dot";
+  font-size: 24px;
+  text-decoration: underline;
+  font-style: italic;
+  font-weight: normal;
+  text-align: center;
 }
 em{
   text-indent: 20%;
@@ -365,15 +421,56 @@ div.📖-running-header{
   color: #925BEC;
 }
 p{
+  text-indent: 20px;
   font-size: 20px;
 
 }
-
-#content{
-  display: none;
+p.coloText{
+  font-size: 14px;
+  font-family: "Space Grotesk";
+  text-indent: 0px;
 }
+
 div.zineFrame #content{
   display: block;
+}
+
+a{
+  color: #925BEC;
+  font-family: "Space Grotesk";
+  border: 2px solid #925BEC;
+  border-radius: 500px;
+  padding-left: 4px;
+  padding-right: 4px;
+  text-decoration: none;
+}
+a:hover{
+  background-color: #925BEC;
+  color: white;
+}
+
+
+
+div.photoArchive{
+  display: none;
+  position: relative;
+  height: calc(100vh - 88px);
+  width: 100%;
+  background-color: green;
+  overflow: hidden;
+
+}
+
+div.about{
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  flex-direction: column;
+  width: 600px;
+  justify-content: center;
+  align-items: center;
 }
 
 #randomize{
@@ -382,5 +479,5 @@ div.zineFrame #content{
 }
 #randomize:hover{
   cursor: pointer;
-  
+
 }
