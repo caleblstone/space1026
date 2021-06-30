@@ -14,7 +14,7 @@ Experimental Archive Space was designed and developed by Lee Tusman and Caleb St
 
 All images and artwork are copyright their respective owners and were originally posted on social media, platforms or websites by or for Space 1026. 
 
-space1026.com
+space1026.com  
 experimentalarchive.space
 
 # For website
