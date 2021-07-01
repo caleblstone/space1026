@@ -1,7 +1,7 @@
 const totalPicsToDisplay = 30;
 let photoArchiveDiv = document.querySelector("div.photoArchive")
 let allTheImages = document.querySelectorAll("photoArchiveImg")
-fetch("/assets/imageNames/img-list.json")
+fetch("/assets/imageNames/imgNames.json")
 .then(images => {
    return images.json();
 })

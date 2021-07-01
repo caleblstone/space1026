@@ -15,7 +15,7 @@ fetch("/assets/questions/answers.json")
 .then(QandA => answers = QandA);
 
 let imgNames
-fetch("/assets/imageNames/img-list.json")
+fetch("/assets/imageNames/imgNames.json")
 .then(images => {
    return images.json();
 })
