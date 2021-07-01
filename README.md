@@ -34,4 +34,4 @@ Space 1026 archive is a project by Lee Tusman as a member and in conjunction wit
 
 [Caleb Stone](http://bycalebstone.com) is the designer and web developer
 
-Thanks to many folks for generously sharing knowledge and feedback. [Ashley Blewer](https://ashleyblewer.com/) for consultation on digital preservation workflows, models and infrastructure for media collection and documentation. [Cori Olinghouse](https://linktr.ee/coriolinghouse) for her wealth of knowledge about community and participatory archives. Miriam Singer of Space 1026 helped with organizing. And thanks especially the Space 1026 crew.
+Thanks to many folks for generously sharing knowledge and feedback. Thank you to NEW INC (and Cultural Futures cohort). [Ashley Blewer](https://ashleyblewer.com/) for consultation on digital preservation workflows, models and infrastructure for media collection and documentation. [Cori Olinghouse](https://linktr.ee/coriolinghouse) for her wealth of knowledge about community and participatory archives. [Ivana Larrossa](https://www.ivanalarrosa.com/) for mentorship. Miriam Singer of Space 1026 helped with organizing. And thanks especially to the Space 1026 crew.
