@@ -1,6 +1,7 @@
+const totalPicsToDisplay = 30;
 let photoArchiveDiv = document.querySelector("div.photoArchive")
 let allTheImages = document.querySelectorAll("photoArchiveImg")
-fetch("/assets/imageNames/imgNames.json")
+fetch("/assets/imageNames/img-list.json")
 .then(images => {
    return images.json();
 })
@@ -9,9 +10,12 @@ fetch("/assets/imageNames/imgNames.json")
 let newImage = []
 let imgDiv = []
 setTimeout(function(){
-  for (var i = 0; i < imgNames.name.length; i++) {
+
+  for (var i = 0; i < totalPicsToDisplay; i++) {
+
+    let picNum = Math.floor(Math.random() * imgNames.name.length);
     newImage[i] = new Image()
-    newImage[i].src = imgNames.name[i]
+    newImage[i].src = "/assets/img/"+imgNames.name[picNum]
 
 
     let randomWidth = Math.floor(Math.random()* (window.innerWidth * .8))
