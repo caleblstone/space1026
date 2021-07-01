@@ -15,10 +15,11 @@ fetch("/assets/questions/answers.json")
 .then(QandA => answers = QandA);
 
 let imgNames
-fetch("/assets/imageNames/imgNames.json")
+fetch("/assets/imageNames/img-list.json")
 .then(images => {
    return images.json();
 })
+//.then(Images => imgNames = Images);
 .then(Images => imgNames = Images);
 
 setTimeout(function(){
@@ -27,7 +28,7 @@ setTimeout(function(){
     let imageSel = Math.floor(Math.random() * imgNames.name.length)
     console.log(imageSel);
     let theImage = new Image()
-    theImage.src = imgNames.name[imageSel]
+    theImage.src = "/assets/img/"+imgNames.name[imageSel]
     item.appendChild(theImage)
   });
 }, 500)
@@ -375,7 +376,7 @@ let generateQandA = function(){
       if (imageDecider == 1) {
         let imagePicker = Math.floor(Math.random() * imageNameArray.length)
         let image = new Image()
-        image.src = imageNameArray[imagePicker]
+        image.src = "/assets/img/"+imageNameArray[imagePicker]
         contentBox.appendChild(image)
       }
     });
