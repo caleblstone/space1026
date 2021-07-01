@@ -16,7 +16,7 @@ Oral history with current Space 1026 members. Space 1026 is Al San Valentin, And
 
 All images and artwork are copyright their respective owners and were originally posted on social media, platforms or websites by or for Space 1026. <a href="mailto:leetusman@gmail.com">Get in touch</a> to have an image removed.
 
-Experimental Archive Space is built with open source software. Source code on [GitHub](https://github.com/caleblstone/space1026).
+Experimental Archive Space is built with open source software. Source code on [GitHub](https://github.com/caleblstone/space1026). See [RESOURCES](RESOURCES.md) for more information on the following.
 
 [Bindery.js](https://evanbrooks.info/bindery/) by Evan Brooks
 
