@@ -7,7 +7,7 @@ let mosBoxTxt = document.querySelectorAll(".mosBoxTxt")
 
 
 let answers
-fetch("assets/questions/answers.json")
+fetch("/assets/questions/answers.json")
 .then(answers => {
    return answers.json();
 
@@ -15,7 +15,7 @@ fetch("assets/questions/answers.json")
 .then(QandA => answers = QandA);
 
 let imgNames
-fetch("assets/imageNames/imgNames.json")
+fetch("/assets/imageNames/imgNames.json")
 .then(images => {
    return images.json();
 })
@@ -263,7 +263,7 @@ let generateTitle = function(){
   let zineSubtitle = document.createElement("h5")
   zineTitle.classList.add("bookTitle")
   let titleNode = document.createTextNode("Space 1026");
-  let subtitleNode = document.createTextNode("experimenal archive")
+  let subtitleNode = document.createTextNode("experimental archive")
 
   zineTitle.appendChild(titleNode)
   zineSubtitle.appendChild(subtitleNode)

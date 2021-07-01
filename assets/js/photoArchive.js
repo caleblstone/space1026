@@ -1,6 +1,6 @@
 let photoArchiveDiv = document.querySelector("div.photoArchive")
 let allTheImages = document.querySelectorAll("photoArchiveImg")
-fetch("assets/imageNames/imgNames.json")
+fetch("/assets/imageNames/imgNames.json")
 .then(images => {
    return images.json();
 })
