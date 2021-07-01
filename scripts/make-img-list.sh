@@ -9,20 +9,19 @@ pos=$(( ${#files[*]} - 1 ))
 last=${files[$pos]}
 
 #overwrite file if already there
-echo "{" > img-list.json 
+echo "{" > img-list.json
 echo ' "name": [' >> img-list.json
 
 for FILE in "${files[@]}"
-do 
+do
   if [[ $FILE == $last ]]
   then
     echo " "\"$FILE\" >> img-list.json
     break
-  else 
+  else
     echo " "\"$FILE\", >> img-list.json
-  fi 
-done 
+  fi
+done
 
 echo " ]" >> img-list.json
 echo "}" >> img-list.json
-
