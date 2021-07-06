@@ -1,15 +1,15 @@
 @font-face {
   font-family: "Times Dot";
-  src: url(assets/Times_Dot/timesdotrom-webfont.woff2);
+  src: url(/assets/Times_Dot/timesdotrom-webfont.woff2);
 }
 @font-face {
   font-family: "Times Dot";
-  src: url(assets/Times_Dot/timesdotbol-webfont.woff2);
+  src: url(/assets/Times_Dot/timesdotbol-webfont.woff2);
   font-weight: bold;
 }
 @font-face {
   font-family: "Times Dot";
-  src: url(assets/Times_Dot/times_dot-italic-webfont.woff);
+  src: url(/assets/Times_Dot/times_dot-italic-webfont.woff);
   font-style: italic;
 }
 
