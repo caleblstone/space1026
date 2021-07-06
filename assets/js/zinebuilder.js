@@ -5,6 +5,7 @@ let zineBox = document.querySelector("div.zineProper")
 let mosBoxImg = document.querySelectorAll(".mosBoxImg")
 let mosBoxTxt = document.querySelectorAll(".mosBoxTxt")
 
+const loadTime = 1000
 
 let answers
 fetch("/assets/questions/answers.json")
@@ -31,7 +32,7 @@ setTimeout(function(){
     theImage.src = "/assets/img/"+imgNames.name[imageSel]
     item.appendChild(theImage)
   });
-}, 500)
+}, loadTime)
 
 
 
@@ -50,7 +51,7 @@ zineButton.addEventListener("click", function(){
   setTimeout(function(){
     bookSetup()
     regeneration()
-  }, 500)
+  }, loadTime)
 
 })
 
@@ -65,7 +66,7 @@ mosBoxImg.forEach((item, i) => {
     setTimeout(function(){
       bookSetup()
       regeneration()
-    }, 500)
+    }, loadTime)
   })
 });
 
@@ -80,7 +81,7 @@ mosBoxTxt.forEach((item, i) => {
     setTimeout(function(){
       bookSetup()
       regeneration()
-    }, 500)
+    }, loadTime)
   })
 });
 
@@ -133,9 +134,6 @@ let bookSetup = function(){
 
   })
 
-
-
-
 }
 
 let regeneration = function(){
@@ -162,7 +160,7 @@ let regeneration = function(){
   runBindery()
   setTimeout(function(){
     bookSetup()
-  }, 500)
+  }, loadTime)
   })
 
   newPhotosButton.addEventListener("click", function(){
@@ -182,7 +180,7 @@ let regeneration = function(){
       runBindery()
       setTimeout(function(){
         bookSetup()
-      }, 500)
+      }, loadTime)
   })
 
   applyButton.addEventListener("click", function(){
@@ -205,7 +203,7 @@ let regeneration = function(){
       setTimeout(function(){
         bookSetup()
         colorChanger()
-      }, 1000)
+      }, loadTime)
 
   })
 }
