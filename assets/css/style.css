@@ -135,17 +135,21 @@ box-sizing: border-box;
 
 }
 
+img{
+  width: 100%;
+  object-fit: cover;
+}
 
 
 div.flex1{
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 50vh;
+  /* height: 50vh; */
 }
 div.flex1_2_1{
   width: 40%;
-  height: 100%;
+  /* height: 100%; */
   margin-right: 16px;
 }
 
@@ -159,6 +163,7 @@ div.flex1_3_1{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  height: 100%;
 }
 div.flex1_3_2{
   margin-top: 16px;
@@ -166,7 +171,7 @@ div.flex1_3_2{
   border-radius: 20vh;
 }
 div.flex1_4_1{
-  height: 30vh;
+  height: 100%;
   width: 88%;
 }
 div.flex1_4_2{
@@ -209,15 +214,16 @@ div.flex3{
 }
 div.flex3_1{
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 72vh;
+  /* flex-direction: column;
+  justify-content: space-between; */
+  height: 100%;
   width: 40%;
   margin-right: 16px;
 }
 div.flex3_1_1{
   margin-bottom: 16px;
   border-radius: 8vh;
+  height: 100%;
 }
 div.flex3_2{
   width: 36%;
@@ -270,7 +276,7 @@ div.TD{
 div.mosBoxImg{
   display: flex;
   border: 4px solid black;
-  object-fit: scale-down;
+  /* object-fit: cover; */
   overflow: hidden;
 }
 div.mosBoxImg:hover{
@@ -279,9 +285,7 @@ div.mosBoxImg:hover{
   box-shadow: 0 0 24px #925BEC;
   cursor: pointer;
 }
-img{
-  width: 100%;
-}
+
 
 
 div.zineMaker{
@@ -458,9 +462,30 @@ div.photoArchive{
   position: relative;
   height: calc(100vh - 88px);
   width: 100%;
-  background-color: green;
+  background-color: #925BEC;
   overflow: hidden;
 
+}
+div.photoNavigation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+}
+nav.photoArchiveNav{
+  z-index: 1000;
+  font-size: 40px;
+  padding: 8px;
+  padding-left: 16px;
+  padding-right: 16px;
+  background-color: red;
+
+  /* position: fixed; */
+}
+nav.photoArchiveNav:hover {
+  background-color: #925BEC;
+  color: #D6D6D6;
 }
 
 div.about{

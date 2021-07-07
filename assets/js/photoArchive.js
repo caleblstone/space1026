@@ -1,6 +1,10 @@
 const totalPicsToDisplay = 30;
 let photoArchiveDiv = document.querySelector("div.photoArchive")
 let allTheImages = document.querySelectorAll("photoArchiveImg")
+let newImageButton = document.getElementById("newPhotosButton")
+let organizeButton = document.getElementById("organizeButton")
+let imageBox = document.getElementById("putTheImagesInHere")
+
 fetch("/assets/imageNames/imgNames.json")
 .then(images => {
    return images.json();
@@ -9,7 +13,7 @@ fetch("/assets/imageNames/imgNames.json")
 
 let newImage = []
 let imgDiv = []
-setTimeout(function(){
+let generateImages = function(){
 
   for (var i = 0; i < totalPicsToDisplay; i++) {
 
@@ -26,20 +30,55 @@ setTimeout(function(){
     imgDiv[i] = document.createElement("div")
     imgDiv[i].style.position = "absolute"
     imgDiv[i].classList.add("photoArchiveImg")
-    imgDiv[i].style.width = "25%"
+    imgDiv[i].style.width = "20%"
     imgDiv[i].appendChild(newImage[i])
-    photoArchiveDiv.appendChild(imgDiv[i])
+    imageBox.appendChild(imgDiv[i])
     imgDiv[i].style.left = randomWidth + "px"
     imgDiv[i].style.top = randomHeight + "px"
     imgDiv[i].style.cursor = "move"
     dragElement(imgDiv[i]);
 
   }
-
-
+}
+setTimeout(function(){
+  generateImages()
 }, 500)
 
 
+newImageButton.addEventListener("click", function(){
+  var images = photoArchiveDiv.getElementsByTagName('img');
+  var l = images.length;
+  for (var i = 0; i < l; i++) {
+    images[0].parentNode.removeChild(images[0]);
+}
+generateImages()
+})
+
+organizeButton.addEventListener("click", function(){
+
+
+
+  let allImages = document.querySelectorAll("div.photoArchiveImg")
+
+  allImages.forEach((item, i) => {
+    item.style.position = "static"
+    item.style.left = ""
+    item.style.top = ""
+    console.log("hello");
+  });
+  photoArchiveDiv.style.display = "flex"
+  photoArchiveDiv.style.flexDirection = "column"
+  photoArchiveDiv.style.overflowY = "scroll"
+
+  imageBox.style.display = "flex"
+  imageBox.style.flexDirection = "row"
+  imageBox.style.flexWrap = "wrap"
+  imageBox.style.justifyContent = "space-between"
+
+
+
+
+})
 
 
 
@@ -48,7 +87,7 @@ setTimeout(function(){
 
 
 function dragElement(elmnt) {
-  console.log("hello");
+  // console.log("hello");
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
     elmnt.onmousedown = dragMouseDown;
