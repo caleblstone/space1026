@@ -349,26 +349,45 @@ let generateQandA = function(){
     shuffle()
     let zineLengthSlider = document.getElementById("zineLength")
 
-    if (item.answer.length > zineLengthSlider.value && item.answer.length <= 4 ) {
-      item.answer.length = zineLengthSlider.value
-    }
+    // if (item.answer.length > zineLengthSlider.value && item.answer.length <= 4 ) {
+    //   console.log("minimizer ran");
+    //   item.answer.length = zineLengthSlider.value
+    //   console.log(item.answer.length);
+    // }
+
+    // if (zineLengthSlider.value < 4 && item.answer.length > zineLengthSlider.value) {
+    //
+    //   item.answer.length = (zineLengthSlider.value)
+    //
+    // }
+    // console.log(zineLengthSlider.value);
 
 
+    // console.log(item.answer.length);
+    item.answer.forEach((ob, j) => {
 
-    console.log(item.answer);
-    item.answer.forEach((item, i) => {
-
-      let name = item.name
-      let answerText = item.response
+      // console.log(j);
+      let name = ob.name
+      let answerText = ob.response
       let answerNode = document.createTextNode('"' + answerText + '"')
       let answerComp = document.createElement("p")
       let nameNode = document.createTextNode(name)
       let nameComp = document.createElement("em")
+      let imageLikelySlider = document.getElementById("imageQuantity")
       answerComp.appendChild(answerNode)
       nameComp.appendChild(nameNode)
-      contentBox.appendChild(nameComp)
-      contentBox.appendChild(answerComp)
-      let imageLikely = 4
+
+      if (j <= (zineLengthSlider.value - 1) && zineLengthSlider.value < 4) {
+
+        contentBox.appendChild(nameComp)
+        contentBox.appendChild(answerComp)
+      }
+      if (zineLengthSlider.value == 4) {
+
+        contentBox.appendChild(nameComp)
+        contentBox.appendChild(answerComp)
+      }
+      let imageLikely = imageLikelySlider.value
       let imageDecider = Math.floor(Math.random() * imageLikely)
 
       if (imageDecider == 1) {
