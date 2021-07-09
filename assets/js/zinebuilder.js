@@ -4,7 +4,8 @@ let contentBox = document.getElementById("content")
 let zineBox = document.querySelector("div.zineProper")
 let mosBoxImg = document.querySelectorAll(".mosBoxImg")
 let mosBoxTxt = document.querySelectorAll(".mosBoxTxt")
-
+let body = document.querySelector("body")
+let controls = document.querySelector("div.📖-controls")
 const loadTime = 1000
 
 let answers
@@ -51,7 +52,13 @@ zineButton.addEventListener("click", function(){
   setTimeout(function(){
     bookSetup()
     regeneration()
+
+
+
   }, loadTime)
+  setTimeout(function(){
+    fullScreenZine()
+  }, 2000)
 
 })
 
@@ -206,6 +213,8 @@ let regeneration = function(){
       }, loadTime)
 
   })
+
+
 }
 
 
@@ -583,3 +592,43 @@ let colophon = function(){
   coloP[8].innerHTML = '<a href="https://www.gnu.org/software/wget/">Wget</a> by Hrvoje Nikšić and contributors'
 
 }
+
+let fullScreenZine = function(){
+  let printButton = document.querySelector("button.📖-btn-print")
+
+  let viewSelector = document.getElementById("bindery-choose-view")
+
+  printButton.style.backgroundColor = "red"
+  viewSelector.addEventListener("change", function(){
+    console.log("im Over");
+    let selectorValue = document.querySelector("div.📖-select-val")
+    let binderyZoomContent = document.querySelector("div.📖-zoom-content")
+    let zineFrame = document.querySelector("div.zineFrame")
+
+    if (viewSelector.value == "print" && body.firstChild !== zineBox) {
+      body.insertBefore(zineBox, body.firstChild)
+      binderyZoomContent.style.backgroundColor = "white"
+      body.style.overflow = "visible"
+      zineBox.style.left = "0px"
+      zineBox.style.top = "0px"
+      zineBox.style.width = "100%"
+      zineBox.style.overflow = "visible"
+    }
+    if (viewSelector.value !== "print" && body.firstChild == zineBox) {
+      zineFrame.insertBefore(zineBox, zineFrame.childNodes[2])
+      binderyZoomContent.style.backgroundColor = "#D6D6D6"
+      body.style.overflow = "hidden"
+      zineBox.style.overflow = "scroll"
+    }
+
+      fullScreenZine()
+  })
+
+
+
+
+}
+
+// controls.addEventListener("mousever", function(){
+//   fullScreenZine()
+// })
