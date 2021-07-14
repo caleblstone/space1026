@@ -329,7 +329,7 @@ let generateQandA = function(){
     questionDiv.classList.add("questionDiv")
     let questionText = document.createElement("h2")
     let questionNode = document.createTextNode(theQuestion)
-
+    questionText.classList.add(theQuestion.split(" ").join(""))
 
 
     questionText.appendChild(questionNode)
