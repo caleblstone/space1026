@@ -88,8 +88,19 @@ mosBoxTxt.forEach((item, i) => {
     setTimeout(function(){
       bookSetup()
       regeneration()
+      theClass = item.textContent.replace(/\s+/g, '')
+      let questionH2 = document.getElementById(theClass)
+      console.log(theClass);
+      console.log("HowdoyoubringinnewpeopletoSpace?");
+      questionH2.scrollIntoView()
+
     }, loadTime)
+
+    setTimeout(function(){
+
+    }, loadTime + 1000)
   })
+
 });
 
 
@@ -329,7 +340,8 @@ let generateQandA = function(){
     questionDiv.classList.add("questionDiv")
     let questionText = document.createElement("h2")
     let questionNode = document.createTextNode(theQuestion)
-    questionText.classList.add(theQuestion.split(" ").join(""))
+    let questionString = theQuestion.split(" ").join("")
+    questionText.setAttribute("id" ,questionString)
 
 
     questionText.appendChild(questionNode)
