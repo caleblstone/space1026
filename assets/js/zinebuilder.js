@@ -594,18 +594,21 @@ let colophon = function(){
 }
 
 let fullScreenZine = function(){
-  let printButton = document.querySelector("button.📖-btn-print")
+  let printButton = document.querySelector("button.📖-btn")
 
   let viewSelector = document.getElementById("bindery-choose-view")
 
-  printButton.style.backgroundColor = "red"
+  printButton.style.display = "none";
+
   viewSelector.addEventListener("change", function(){
     console.log("im Over");
     let selectorValue = document.querySelector("div.📖-select-val")
     let binderyZoomContent = document.querySelector("div.📖-zoom-content")
     let zineFrame = document.querySelector("div.zineFrame")
 
+    //if selector value is print and it's not fullscreen, then make it fullscreen (remove zine from the zineBox)
     if (viewSelector.value == "print" && body.firstChild !== zineBox) {
+
       body.insertBefore(zineBox, body.firstChild)
       binderyZoomContent.style.backgroundColor = "white"
       body.style.overflow = "visible"
@@ -613,12 +616,24 @@ let fullScreenZine = function(){
       zineBox.style.top = "0px"
       zineBox.style.width = "100%"
       zineBox.style.overflow = "visible"
+
+      //TEST
+      setTimeout((function(){
+
+        let printButton2 = document.querySelector("button.📖-btn")
+	printButton2.style.display = "inline-block";
+
+      }), 1000);
     }
+
+    //if we're not printing, come out of fullscreen (return zine to its box)
     if (viewSelector.value !== "print" && body.firstChild == zineBox) {
-      zineFrame.insertBefore(zineBox, zineFrame.childNodes[2])
+          zineFrame.insertBefore(zineBox, zineFrame.childNodes[2])
       binderyZoomContent.style.backgroundColor = "#D6D6D6"
       body.style.overflow = "hidden"
       zineBox.style.overflow = "scroll"
+
+      printButton.style.display = "none";
     }
 
       fullScreenZine()
