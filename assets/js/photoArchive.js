@@ -31,6 +31,7 @@ let generateImages = function(){
     imgDiv[i].style.position = "absolute"
     imgDiv[i].classList.add("photoArchiveImg")
     imgDiv[i].style.width = "20%"
+
     imgDiv[i].appendChild(newImage[i])
     imageBox.appendChild(imgDiv[i])
     imgDiv[i].style.left = randomWidth + "px"
@@ -64,7 +65,7 @@ organizeButton.addEventListener("click", function(){
     item.style.position = "static"
     item.style.left = ""
     item.style.top = ""
-    console.log("hello");
+
   });
   photoArchiveDiv.style.display = "flex"
   photoArchiveDiv.style.flexDirection = "column"
@@ -74,7 +75,17 @@ organizeButton.addEventListener("click", function(){
   imageBox.style.flexDirection = "row"
   imageBox.style.flexWrap = "wrap"
   imageBox.style.justifyContent = "space-between"
+  imageBox.style.alignItems = "center"
 
+  let organizedImages = document.querySelectorAll("div.photoArchiveImg")
+  organizedImages.forEach((item, i) => {
+    imgDiv[i].style.marginRight = "20px"
+    imgDiv[i].style.marginLeft = "20px"
+
+  });
+
+
+  imageBox.style.width = "100%"
 
 
 
