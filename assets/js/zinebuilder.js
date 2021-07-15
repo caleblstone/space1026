@@ -2,7 +2,7 @@
 let zineButton = document.querySelector("div.navZineMaker")
 let contentBox = document.getElementById("content")
 let zineBox = document.querySelector("div.zineProper")
-let mosBoxImg = document.querySelectorAll(".mosBoxImg")
+
 let mosBoxTxt = document.querySelectorAll(".mosBoxTxt")
 let body = document.querySelector("body")
 let controls = document.querySelector("div.📖-controls")
@@ -30,7 +30,7 @@ setTimeout(function(){
     let imageSel = Math.floor(Math.random() * imgNames.name.length)
     console.log(imageSel);
     let theImage = new Image()
-    theImage.src = "/assets/img/"+imgNames.name[imageSel]
+    theImage.src = "/assets/img/" + imgNames.name[imageSel]
     item.appendChild(theImage)
   });
 }, loadTime)
@@ -62,20 +62,7 @@ zineButton.addEventListener("click", function(){
 
 })
 
-mosBoxImg.forEach((item, i) => {
-  item.addEventListener("click", function(){
-    homePage.style.display = "none"
-    zinePage.style.display = "flex"
-    generateTitle()
-    questionRandomizer()
-    generateQandA()
-    runBindery()
-    setTimeout(function(){
-      bookSetup()
-      regeneration()
-    }, loadTime)
-  })
-});
+
 
 mosBoxTxt.forEach((item, i) => {
   item.addEventListener("click", function(){

@@ -4,6 +4,7 @@ let allTheImages = document.querySelectorAll("photoArchiveImg")
 let newImageButton = document.getElementById("newPhotosButton")
 let organizeButton = document.getElementById("organizeButton")
 let imageBox = document.getElementById("putTheImagesInHere")
+let mosBoxImg = document.querySelectorAll(".mosBoxImg")
 
 fetch("/assets/imageNames/imgNames.json")
 .then(images => {
@@ -136,3 +137,30 @@ function dragElement(elmnt) {
     console.log("hey");
   }
 }
+
+mosBoxImg.forEach((item, i) => {
+  item.addEventListener("click", function(){
+    homePage.style.display = "none"
+    zinePage.style.display = "none"
+    about.style.display = "none"
+    contentBox.style.display = "none"
+    photoArchive.style.display = "block"
+    clickedImg = document.createElement("div")
+    clickedImg.style.position = "absolute"
+    clickedImg.classList.add("photoArchiveImg")
+    clickedImg.style.width = "20%"
+
+    let imageInside = item.getElementsByTagName('img')
+    console.log(imageInside[0]);
+    let imgSrc = imageInside[0].src
+    console.log(imgSrc);
+    let selectedImage = new Image
+    selectedImage.src = imgSrc
+    clickedImg.appendChild(selectedImage)
+    imageBox.insertBefore(clickedImg, imageBox.firstChild)
+    clickedImg.style.left = 200 + "px"
+    clickedImg.style.top = 200 + "px"
+    clickedImg.style.cursor = "move"
+    dragElement(clickedImg);
+  })
+});
