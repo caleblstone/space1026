@@ -395,9 +395,26 @@ let generateQandA = function(){
         contentBox.appendChild(nameComp)
         contentBox.appendChild(answerComp)
       }
-      let imageLikely = imageLikelySlider.value
-      let imageDecider = Math.floor(Math.random() * imageLikely)
+      let imageLikely
 
+      if (imageLikelySlider.value == 8) {
+        imageLikely = 2
+      }
+      if (imageLikelySlider.value == 6) {
+        imageLikely = 4
+      }
+      if (imageLikelySlider.value == 4) {
+        imageLikely = 6
+      }
+      if (imageLikelySlider.value == 2) {
+        imageLikely = 8
+      }
+
+
+      let imageDecider = Math.floor(Math.random() * imageLikely)
+      console.log("this is the value: " + imageLikelySlider.value);
+      console.log("this is the likelihood: " + imageLikely);
+      console.log("this is the decider: " + imageDecider);
       if (imageDecider == 1) {
         let imagePicker = Math.floor(Math.random() * imageNameArray.length)
         let image = new Image()
