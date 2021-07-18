@@ -1,10 +1,12 @@
 const totalPicsToDisplay = 30;
 let photoArchiveDiv = document.querySelector("div.photoArchive")
+let photoArchiveButton = document.querySelector("nav.photoArchiveButton")
 let allTheImages = document.querySelectorAll("photoArchiveImg")
 let newImageButton = document.getElementById("newPhotosButton")
 let organizeButton = document.getElementById("organizeButton")
 let imageBox = document.getElementById("putTheImagesInHere")
 let mosBoxImg = document.querySelectorAll(".mosBoxImg")
+let theHomeButton = document.querySelector("div.title")
 
 fetch("/assets/imageNames/imgNames.json")
 .then(images => {
@@ -42,10 +44,21 @@ let generateImages = function(){
 
   }
 }
+
+photoArchiveButton.addEventListener("click", function(){
+    generateImages()
+})
 setTimeout(function(){
-  generateImages()
+
 }, 500)
 
+theHomeButton.addEventListener("click", function(){
+  var images = photoArchiveDiv.getElementsByTagName('img');
+  var l = images.length;
+  for (var i = 0; i < l; i++) {
+    images[0].parentNode.removeChild(images[0]);
+}
+})
 
 newImageButton.addEventListener("click", function(){
   var images = photoArchiveDiv.getElementsByTagName('img');
@@ -58,8 +71,13 @@ generateImages()
 
 organizeButton.addEventListener("click", function(){
 
+organizeImages()
 
 
+})
+
+
+let organizeImages = function(){
   let allImages = document.querySelectorAll("div.photoArchiveImg")
 
   allImages.forEach((item, i) => {
@@ -90,10 +108,7 @@ organizeButton.addEventListener("click", function(){
 
 
 
-})
-
-
-
+}
 
 
 
@@ -140,6 +155,7 @@ function dragElement(elmnt) {
 
 mosBoxImg.forEach((item, i) => {
   item.addEventListener("click", function(){
+    generateImages()
     homePage.style.display = "none"
     zinePage.style.display = "none"
     about.style.display = "none"
@@ -162,5 +178,6 @@ mosBoxImg.forEach((item, i) => {
     clickedImg.style.top = 200 + "px"
     clickedImg.style.cursor = "move"
     dragElement(clickedImg);
+    organizeImages()
   })
 });
